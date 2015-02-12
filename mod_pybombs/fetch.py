@@ -147,7 +147,6 @@ class fetcher:
             stat = shellexec_shell("tar xzf %s"%(fn), False);
             if(stat != 0):
                 return False;
-            rmrf(self.recipe.name);
             os.rename(dirname, self.recipe.name);
         elif(re.match(r'.*\.tar.bz2?', fn) or re.match(r'.*\.tbz2?', fn)):
             out = shellexec(["tar tbjB 1 --file %s"%(fn)]);
